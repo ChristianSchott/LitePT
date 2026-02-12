@@ -51,6 +51,57 @@ University of Zurich
   python setup.py install
   cd ../..
   ```
+  To support users who may want to use PointROPE in non-CUDA environments, we also provide a pure PyTorch implementation of PointROPE. The CUDA-compiled version is used by default. If it is unavailable, the system will automatically fall back to the PyTorch implementation. Please note that the PyTorch version is slightly slower than the CUDA-optimized implementation. Benchmark results are shown below:
+  <details style='padding: 10px; border-radius:5px 30px 30px 5px; border-style: solid; border-width: 1px;'>
+  <summary>Benchmark: PointROPE (Pure PyTorch VS. CUDA)</summary>
+
+  <table>
+   <caption style="caption-side: bottom; text-align: center">Efficiency comparison on ScanNet.</caption>
+   <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="2"><div align="center">Training</div></th>
+      <th colspan="2"><div align="center">Inference</div></th>
+    </tr>
+    <tr>
+      <th>Method</th>
+      <th>#Params</th>
+      <th>Latency</th>
+      <th>Memory</th>
+      <th>Latency</th>
+      <th>Memory</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+      <td>PTv3</td>
+      <td>46.1M</td>
+      <td>110ms</td>
+      <td>5.8G</td>
+      <td>51ms</td>
+      <td>4.1G</td>
+    </tr>
+    <tr>
+      <td>LitePT-S (Pure Torch PointROPE)</td>
+      <td>12.7M</td>
+      <td>78ms</td>
+      <td>2.4G</td>
+      <td>24ms</td>
+      <td>2.0G</td>
+    </tr>
+    <tr>
+    <td>LitePT-S (CUDA PointROPE)</td>
+      <td>12.7M</td>
+      <td>72ms</td>
+      <td>2.3G</td>
+      <td>21ms</td>
+      <td>2.0G</td>
+    </tr>
+   </tbody>
+  </table>
+
+  </details>
 
 - Additional requirements. The requirements below are optional, and only required for evaluator and PointGroup instance segmentation. 
   * For evaluator:
