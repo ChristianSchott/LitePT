@@ -9,6 +9,8 @@ ETH Zurich,
 University of Oxford,
 University of Zurich
 
+**CVPR 2026**
+
 <a href="https://arxiv.org/abs/2512.13689"><img src="https://img.shields.io/badge/arXiv-LitePT-red" alt="Paper PDF"></a>
 <a href="https://litept.github.io/"><img src="https://img.shields.io/badge/Project_Page-LitePT-green" alt="Project Page"></a>
 <a href='https://huggingface.co/prs-eth/LitePT'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue' alt="HF Model"></a>
@@ -25,6 +27,7 @@ University of Zurich
 <u>Left</u>: LitePT-S has $3.6\times$ fewer parameters, $2\times$ faster runtime and $2\times$ lower memory footprint than PTv3. Moreover, it remains faster and more memory-efficient even when scaled up to LitePT-L with a parameter count twice that of PTv3. <u>Right</u>: Already the smallest variant, LitePT-S, matches or outperforms state-of-the-art point cloud backbones across a range of benchmarks.
 
 ## News
+- **2026-02-21:** LitePT is accepted to CVPR 2026.
 - **2025-12-16:** Paper, project page, code, models are released.
 
 ## Preparation
@@ -210,10 +213,10 @@ Thanks to these great repositories: [Pointcept](https://github.com/Pointcept/Poi
 
 If you find this project useful, please cite:
 ```
-@article{yuelitept2025,
+@inproceedings{yuelitept2026,
     title={{LitePT: Lighter Yet Stronger Point Transformer}},
     author={Yue, Yuanwen and Robert, Damien and Wang, Jianyuan and Hong, Sunghwan and Wegner, Jan Dirk and Rupprecht, Christian and Schindler, Konrad},
-    journal={arXiv preprint arXiv:2512.13689},
-    year={2025}
+    booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year={2026}
 }
 ```
